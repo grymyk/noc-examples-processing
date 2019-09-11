@@ -16,4 +16,3 @@ void draw() {
   mover.checkEdges();
   mover.display(); 
 }
-
