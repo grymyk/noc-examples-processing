@@ -11,10 +11,10 @@ class Mover {
     float xPos = widthEllipse / 2 + 1;
     float yPos = height - heightEllipse / 2 - 1;
 
-    float xVel = 1;
-    float yVel = -2;
-    //float xVel = 0 & random(-2, 2);
-    //float yVel = 0 & random(-2, 2);
+    //float xVel = 1;
+    //float yVel = -2;
+    float xVel = random(-2, 2);
+    float yVel = random(-2, 2);
 
     PVector position;
     PVector velocity;
