@@ -24,5 +24,3 @@ void draw() {
     movers[i].display(); 
   }
 }
-
-
