@@ -34,6 +34,7 @@ class Mover {
   }
 
   void checkEdges() {
+
     if (position.x > width) {
       position.x = width;
       velocity.x *= -1;
@@ -46,5 +47,7 @@ class Mover {
       velocity.y *= -1;
       position.y = height;
     }
+
   }
+
 }
