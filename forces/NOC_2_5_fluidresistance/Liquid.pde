@@ -4,8 +4,6 @@
 
 // Liquid class 
 class Liquid {
-
-
   // Liquid is a rectangle
   float x, y, w, h;
   // Coefficient of drag
@@ -32,7 +30,7 @@ class Liquid {
     float dragMagnitude = c * speed * speed;
 
     // Direction is inverse of velocity
-    PVector dragForce = m.velocity.get();
+    PVector dragForce = m.velocity.copy();
     dragForce.mult(-1);
 
     // Scale according to magnitude

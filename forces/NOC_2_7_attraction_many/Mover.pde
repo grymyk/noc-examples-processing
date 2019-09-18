@@ -28,10 +28,21 @@ class Mover {
   }
 
   void display() {
-    stroke(0);
-    strokeWeight(2);
-    fill(0,100);
-    ellipse(position.x, position.y, mass*25, mass*25);
+    //stroke(0);
+    //strokeWeight(2);
+    //fill(0, 100);
+    //ellipse(position.x, position.y, mass*2, mass*2);
+    
+    //stroke(125);
+    //point(position.x, position.y);
+    
+    stroke(125);
+    strokeWeight(1);
+    beginShape(POINTS);
+        vertex(position.x, position.y);
+        //vertex(position.x, position.y);
+        //vertex(position.x, position.y);
+        //vertex(position.x, position.y);
+    endShape();
   }
 }
-

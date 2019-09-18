@@ -21,7 +21,7 @@ void draw() {
     PVector gravity = new PVector(0, 0.1*movers[i].mass);
 
     float c = 0.05;
-    PVector friction = movers[i].velocity.get();
+    PVector friction = movers[i].velocity.copy();
     friction.mult(-1); 
     friction.normalize();
     friction.mult(c);
@@ -35,11 +35,3 @@ void draw() {
     movers[i].checkEdges();
   }
 }
-
-
-
-
-
-
-
-

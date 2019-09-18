@@ -19,21 +19,16 @@ void draw() {
   m.update();
   
   a.drag();
-  a.hover(mouseX,mouseY);
+  a.hover(mouseX, mouseY);
  
   a.display();
   m.display();
 }
 
 void mousePressed() {
-  a.clicked(mouseX,mouseY); 
+  a.clicked(mouseX, mouseY);
 }
 
 void mouseReleased() {
   a.stopDragging(); 
 }
-
-
-
-
-

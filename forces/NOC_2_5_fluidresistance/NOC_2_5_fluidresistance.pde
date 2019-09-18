@@ -28,7 +28,6 @@ void draw() {
   liquid.display();
 
   for (int i = 0; i < movers.length; i++) {
-
     // Is the Mover in the liquid?
     if (liquid.contains(movers[i])) {
       // Calculate drag force

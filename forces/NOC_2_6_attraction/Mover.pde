@@ -11,8 +11,8 @@ class Mover {
 
   Mover() {
     position = new PVector(400,50);
-    velocity = new PVector(1,0);
-    acceleration = new PVector(0,0);
+    velocity = new PVector(1, 0);
+    acceleration = new PVector(0, 0);
     mass = 1;
   }
   
@@ -50,6 +50,3 @@ class Mover {
   }
 
 }
-
-
-

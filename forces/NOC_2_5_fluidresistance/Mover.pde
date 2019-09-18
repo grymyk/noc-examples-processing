@@ -29,7 +29,6 @@ class Mover {
   }
 
   void update() {
-
     // Velocity changes according to acceleration
     velocity.add(acceleration);
     // position changes by velocity

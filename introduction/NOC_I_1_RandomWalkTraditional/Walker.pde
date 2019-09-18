@@ -12,11 +12,6 @@ class Walker {
     y = height/2;
   }
 
-  void render() {
-    stroke(0);
-    point(x,y);
-  }
-
   // Randomly move up, down, left, right, or stay in one place
   void step() {
     
@@ -35,4 +30,9 @@ class Walker {
     x = constrain(x,0,width-1);
     y = constrain(y,0,height-1);
   }
+
+    void render() {
+        stroke(0);
+        point(x,y);
+    }
 }

@@ -12,11 +12,11 @@ class Attractor {
   boolean rollover = false; // Is the mouse over the ellipse?
   PVector dragOffset;  // holds the offset for when object is clicked on
 
-  Attractor() {
-    position = new PVector(width/2,height/2);
-    mass = 20;
+  Attractor(float m, float x, float y) {
+    position = new PVector(x, y);
+    mass = m;
     G = 1;
-    dragOffset = new PVector(0.0,0.0);
+    dragOffset = new PVector(0.0, 0.0);
   }
 
   PVector attract(Mover m) {
@@ -64,15 +64,10 @@ class Attractor {
     dragging = false;
   }
 
-
-
-  void drag() {
-    if (dragging) {
-      position.x = mouseX + dragOffset.x;
-      position.y = mouseY + dragOffset.y;
+    void drag() {
+        if (dragging) {
+            position.x = mouseX + dragOffset.x;
+            position.y = mouseY + dragOffset.y;
+        }
     }
-  }
-
 }
-
-

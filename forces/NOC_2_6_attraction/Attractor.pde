@@ -5,29 +5,41 @@
 // A class for a draggable attractive body in our world
 
 class Attractor {
-  float mass;    // Mass, tied to size
-  float G;       // Gravitational Constant
-  PVector position;   // position
+  float mass;               // Mass, tied to size
+  float G;                  // Gravitational Constant
+  PVector position;         // position
   boolean dragging = false; // Is the object being dragged?
   boolean rollover = false; // Is the mouse over the ellipse?
-  PVector dragOffset;  // holds the offset for when object is clicked on
+  PVector dragOffset;       // holds the offset for when object is clicked on
 
   Attractor() {
-    position = new PVector(width/2,height/2);
+    position = new PVector(width/2, height/2);
     mass = 20;
     G = 1;
-    dragOffset = new PVector(0.0,0.0);
+    dragOffset = new PVector(0.0, 0.0);
   }
 
   PVector attract(Mover m) {
-    PVector force = PVector.sub(position,m.position);   // Calculate direction of force
+    PVector force = PVector.sub(position, m.position);  // Calculate direction of force
     float d = force.mag();                              // Distance between objects
-    d = constrain(d,5.0,25.0);                          // Limiting the distance to eliminate "extreme" results for very close or very far objects
+    d = constrain(d, 5.0, 25.0);                        // Limiting the distance to eliminate "extreme" results for very close or very far objects
     force.normalize();                                  // Normalize vector (distance doesn't matter here, we just want this vector for direction)
     float strength = (G * mass * m.mass) / (d * d);     // Calculate gravitional force magnitude
-    force.mult(strength);     // Get force vector --> magnitude * direction
+    force.mult(strength);                               // Get force vector --> magnitude * direction
     return force;
   }
+
+  void drag() {
+    if (dragging) {
+        println(dragging);
+      position.x = mouseX + dragOffset.x;
+      position.y = mouseY + dragOffset.y;
+    }
+  }
+
+    void stopDragging() {
+        dragging = false;
+    }
 
   // Method to display
   void display() {
@@ -59,20 +71,4 @@ class Attractor {
       rollover = false;
     }
   }
-
-  void stopDragging() {
-    dragging = false;
-  }
-
-
-
-  void drag() {
-    if (dragging) {
-      position.x = mouseX + dragOffset.x;
-      position.y = mouseY + dragOffset.y;
-    }
-  }
-
 }
-
-

@@ -45,13 +45,13 @@ class Mover {
       //println(count);
       //count += 1;
       
-      println("-", negativeCount, "+", positiveCount);
+      //println("-", negativeCount, "+", positiveCount);
   }
 
   void update() {
     // Compute a vector that points from position to mouse
-    mouse = new PVector(mouseX,mouseY);
-    PVector acceleration = PVector.sub(mouse,position);
+    mouse = new PVector(mouseX, mouseY);
+    PVector acceleration = PVector.sub(mouse, position);
     // Set magnitude of acceleration
     acceleration.setMag(0.2);
     
@@ -67,7 +67,7 @@ class Mover {
     stroke(0);
     strokeWeight(2);
     fill(127);
-    ellipse(position.x,position.y,48,48);
+    ellipse(position.x, position.y, 48, 48);
   }
 
 }

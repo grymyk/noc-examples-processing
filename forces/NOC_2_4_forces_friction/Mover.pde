@@ -11,13 +11,13 @@ class Mover {
 
   Mover(float m, float x , float y) {
     mass = m;
-    position = new PVector(x,y);
-    velocity = new PVector(0,0);
-    acceleration = new PVector(0,0);
+    position = new PVector(x, y);
+    velocity = new PVector(0, 0);
+    acceleration = new PVector(0, 0);
   }
   
   void applyForce(PVector force) {
-    PVector f = PVector.div(force,mass);
+    PVector f = PVector.div(force, mass);
     acceleration.add(f);
   }
   
@@ -52,6 +52,3 @@ class Mover {
   }
 
 }
-
-
-
