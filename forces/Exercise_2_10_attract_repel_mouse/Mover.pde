@@ -16,7 +16,7 @@ class Mover {
   }
 
   void applyForce(PVector force) {
-    PVector f = PVector.div(force,mass);
+    PVector f = PVector.div(force, mass);
     acceleration.add(f);
   }
 
@@ -29,7 +29,7 @@ class Mover {
   void display() {
     stroke(0);
     fill(175,200);
-    ellipse(position.x,position.y,mass*2,mass*2);
+    ellipse(position.x, position.y, mass*2, mass*2);
   }
 
   PVector repel(Mover m) {
