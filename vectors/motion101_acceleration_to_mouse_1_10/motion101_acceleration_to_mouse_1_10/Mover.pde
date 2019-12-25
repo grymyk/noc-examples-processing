@@ -1,6 +1,5 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// https://natureofcode.com/book/chapter-1-vectors/
+// Example 1.10: Accelerating towards the mouse
 
 class Mover {
   // The Mover tracks position, velocity, and acceleration 
@@ -9,6 +8,7 @@ class Mover {
   PVector acceleration;
   // The Mover's maximum speed
   float topspeed;
+  
   PVector mouse;
   int count;
   int size = 120;
@@ -23,6 +23,28 @@ class Mover {
     velocity = new PVector(0,0);
     topspeed = 5;
     count = 1;
+  }
+  
+  void update() {
+    // Compute a vector that points from position to mouse
+    mouse = new PVector(mouseX, mouseY);
+    PVector acceleration = PVector.sub(mouse, position);
+    // Set magnitude of acceleration
+    acceleration.setMag(0.2);
+    
+    // Velocity changes according to acceleration
+    velocity.add(acceleration);
+    // Limit the velocity by topspeed
+    velocity.limit(topspeed);
+    // position changes by velocity
+    position.add(velocity);
+  }
+  
+  void display() {
+    stroke(0);
+    strokeWeight(2);
+    fill(127);
+    ellipse(position.x, position.y, 48, 48);
   }
   
   void variance() {
@@ -47,27 +69,4 @@ class Mover {
       
       //println("-", negativeCount, "+", positiveCount);
   }
-
-  void update() {
-    // Compute a vector that points from position to mouse
-    mouse = new PVector(mouseX, mouseY);
-    PVector acceleration = PVector.sub(mouse, position);
-    // Set magnitude of acceleration
-    acceleration.setMag(0.2);
-    
-    // Velocity changes according to acceleration
-    velocity.add(acceleration);
-    // Limit the velocity by topspeed
-    velocity.limit(topspeed);
-    // position changes by velocity
-    position.add(velocity);
-  }
-
-  void display() {
-    stroke(0);
-    strokeWeight(2);
-    fill(127);
-    ellipse(position.x, position.y, 48, 48);
-  }
-
 }

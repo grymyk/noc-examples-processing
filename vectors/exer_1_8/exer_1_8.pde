@@ -1,12 +1,12 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// https://natureofcode.com/book/chapter-1-vectors/
+// Example 1.10: Accelerating towards the mouse
 
 // A Mover object
 Mover mover;
 
 void setup() {
-  size(640,360);
+  size(640, 360);
+  
   mover = new Mover(); 
 }
 

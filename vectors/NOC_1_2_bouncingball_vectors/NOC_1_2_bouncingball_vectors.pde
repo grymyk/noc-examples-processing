@@ -1,7 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
 // Example 1-2: Bouncing Ball, with PVector!
 PVector position;
 PVector velocity;
@@ -9,8 +5,8 @@ PVector velocity;
 void setup() {
   size(200,200);
   background(255);
-  position = new PVector(100,100);
-  velocity = new PVector(2.5,5);
+  position = new PVector(100, 100);
+  velocity = new PVector(1.5, 0.5);
 }
 
 void draw() {
@@ -33,5 +29,3 @@ void draw() {
   fill(175);
   ellipse(position.x,position.y,16,16);
 }
-
-

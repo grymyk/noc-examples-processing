@@ -1,6 +1,5 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// https://natureofcode.com/book/chapter-1-vectors/
+// 1.7 Vector Motion: Velocity
 
 class Mover {
     float widthEllipse = 32;
@@ -28,13 +27,6 @@ class Mover {
           position.add(velocity);
       }
 
-    void display() {
-        stroke(0);
-        strokeWeight(1);
-        fill(127);
-        ellipse(position.x, position.y, widthEllipse, heightEllipse);
-      }
-
     void checkEdges() {
         if (position.x > width) {
           position.x = 0;
@@ -48,4 +40,12 @@ class Mover {
           position.y = height;
         }
     }
+    
+    void display() {
+        stroke(0);
+        strokeWeight(1);
+        fill(127);
+ 
+        ellipse(position.x, position.y, widthEllipse, heightEllipse);
+      }
 }

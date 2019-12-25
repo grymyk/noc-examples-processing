@@ -1,6 +1,7 @@
 // https://natureofcode.com/book/chapter-1-vectors/
-// 1.7 Vector Motion: Velocity
+// Example 1.10: Accelerating towards the mouse
 
+// A Mover object
 Mover mover;
 
 void setup() {
@@ -12,7 +13,10 @@ void setup() {
 void draw() {
   background(255);
   
+  // Update the position
   mover.update();
-  mover.checkEdges();
-  mover.display(); 
+  // Display the Mover
+  mover.display();
+  
+  mover.variance();
 }

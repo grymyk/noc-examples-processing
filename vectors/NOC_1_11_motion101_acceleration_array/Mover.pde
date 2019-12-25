@@ -1,9 +1,7 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// https://natureofcode.com/book/chapter-1-vectors/
+// Example 1.11: Array of movers accelerating towards the mouse
 
 class Mover {
-
   // The Mover tracks position, velocity, and acceleration 
   PVector position;
   PVector velocity;
@@ -13,16 +11,15 @@ class Mover {
 
   Mover() {
     // Start in the center
-    position = new PVector(random(width),random(height));
+    position = new PVector(random(width), random(height));
     velocity = new PVector(0,0);
     topspeed = 5;
   }
 
   void update() {
-    
     // Compute a vector that points from position to mouse
-    PVector mouse = new PVector(mouseX,mouseY);
-    acceleration = PVector.sub(mouse,position);
+    PVector mouse = new PVector(mouseX, mouseY);
+    acceleration = PVector.sub(mouse, position);
     // Set magnitude of acceleration
     //acceleration.setMag(0.2);
     acceleration.normalize();
